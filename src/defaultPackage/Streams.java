@@ -23,6 +23,13 @@ public class Streams {
 			.filter(c -> c.getAlunos() >= 100)
 			.map(c -> c.getAlunos())
 			.forEach(total -> System.out.println(total));
+		
+		System.out.println(
+				cursos.stream()
+				.filter(c -> c.getAlunos() >= 100)
+				.mapToInt(Curso::getAlunos)
+				.sum()
+			);	
 	}
 }
 
